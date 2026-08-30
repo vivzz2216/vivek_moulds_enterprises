@@ -923,3 +923,140 @@ textarea.form-control {
   .hero-ult-cta { justify-content: center; flex-direction: column; }
   .glass-tag { display: none; }
 }
+
+/* =========================================
+   CAPABILITIES SHOWCASE (PRODUCTS PAGE)
+========================================= */
+.capabilities-showcase {
+  background: var(--color-white);
+  padding: 0;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-img-wrapper {
+  flex: 1;
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 10s ease;
+}
+.feature-row:hover .feature-img {
+  transform: scale(1.05);
+}
+
+.feature-text {
+  flex: 1;
+  padding: 5% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.feature-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-list-light li {
+  color: white;
+}
+
+.feature-list li strong {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .feature-row, .feature-row-reverse {
+    flex-direction: column;
+    height: auto;
+  }
+  .feature-img-wrapper {
+    height: 400px;
+    width: 100%;
+  }
+  .feature-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .feature-list li {
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   INDUSTRIES WE SERVE GRID
+========================================= */
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.industry-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.industry-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.industry-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
+}
