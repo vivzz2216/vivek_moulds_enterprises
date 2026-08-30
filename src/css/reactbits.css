@@ -1,0 +1,139 @@
+/* ==========================================================================
+   ReactBits Inspired Components (Vanilla JS Implementation)
+   ========================================================================== */
+
+/* 1. BlurText Component */
+.blur-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.3em;
+}
+
+.blur-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  animation: blurTextFadeIn 0.8s forwards cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+@keyframes blurTextFadeIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* 2. Spotlight Card Component */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--color-white);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, -200px) var(--mouse-y, -200px),
+    rgba(255, 107, 0, 0.08), /* Using precision orange for spotlight */
+    transparent 40%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.spotlight-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. Tilt Card (3D Hover Effect) */
+.tilt-card {
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Transform is set via JS, but we add a nice shadow on hover */
+.tilt-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Infinite Scroll Marquee */
+.marquee-container {
+  overflow: hidden;
+  background-color: var(--color-secondary);
+  color: var(--color-steel-light);
+  padding: 15px 0;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient masks for smooth fade in/out on edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-secondary), transparent);
+}
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-secondary), transparent);
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee-scroll 25s linear infinite;
+  gap: 20px;
+}
+
+.marquee-content span {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding-right: 20px;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scrolls exactly half its width to loop */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .marquee-content span {
+    font-size: 0.9rem;
+  }
+}

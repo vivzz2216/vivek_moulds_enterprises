@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects & Gallery | Vivek Moulds Enterprises</title>
+  <meta name="description" content="View our gallery of precision plastic injection moulds, custom moulds, and mould components.">
+  <link rel="stylesheet" href="/src/css/style.css">
+  <link rel="stylesheet" href="/src/css/layout.css">
+  <link rel="stylesheet" href="/src/css/pages.css">
+  <style>
+    /* Premium Gallery Styles Additions */
+    .gallery-grid {
+      gap: 15px; /* Clean spacing */
+    }
+    .gallery-item {
+      aspect-ratio: 1 / 1;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 8px; /* Slight rounding for a premium feel */
+    }
+    .gallery-item img, .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+    .gallery-item:hover img, .gallery-item:hover video {
+      transform: scale(1.08); /* Cinematic zoom on hover */
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 3px solid transparent;
+      border-radius: 8px;
+      transition: border-color 0.4s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .gallery-item:hover::after {
+      border-color: var(--color-accent); /* Red highlight on hover */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+            <a href="/index.html" class="logo">
+        <img src="/src/assets/logo.png" alt="Vivek Moulds Enterprises" style="max-height: 60px;">
+      </a>
+            <nav class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/products.html">Product</a>
+        <a href="/gallery.html" class="active">Gallery</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="/contact.html" class="btn btn-primary">Request a Quote</a>
+      </nav>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <section class="page-header" style="background-color: var(--color-primary); color: white; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h1 style="color: white; font-weight: 800; letter-spacing: -1px;">Our Projects & Gallery</h1>
+      <p style="color: #ccc;">Showcasing our precision plastic mould manufacturing capabilities.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: var(--color-primary); min-height: 100vh;">
+    <div class="container">
+      <div class="gallery-grid">
+        <!-- Image 1 -->
+        <div class="gallery-item" data-category="all">
+          <img src="/src/assets/gallery-wa-img-1.jpeg" alt="Vivek Moulds Work">
+        </div>
+
+        <!-- Image 2 -->
+        <div class="gallery-item" data-category="all">
+          <img src="/src/assets/gallery-wa-img-2.jpeg" alt="Vivek Moulds Work">
+        </div>
+
+        <!-- Image 3 -->
+        <div class="gallery-item" data-category="all">
+          <img src="/src/assets/gallery-wa-img-3.jpeg" alt="Vivek Moulds Work">
+        </div>
+
+        <!-- Image 4 -->
+        <div class="gallery-item" data-category="all">
+          <img src="/src/assets/work-im1.jpeg" alt="Vivek Moulds Work">
+        </div>
+
+        <!-- Image 5 -->
+        <div class="gallery-item" data-category="all">
+          <img src="/src/assets/work2.jpeg" alt="Vivek Moulds Work">
+        </div>
+
+        <!-- Video 1 -->
+        <div class="gallery-item" data-category="all">
+          <video src="/src/assets/gallery-wa-vid-1.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="gallery-item" data-category="all">
+          <video src="/src/assets/gallery-wa-vid-2.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="gallery-item" data-category="all">
+          <video src="/src/assets/gallery-wa-vid-3.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="gallery-item" data-category="all">
+          <video src="/src/assets/work-video.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/src/assets/logo.png" alt="Vivek Moulds Enterprises" style="max-height: 50px; margin-bottom: 15px;">
+          <p>Precision Plastic Moulds & Tooling Solutions engineered for accuracy and reliable production.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About Us</a>
+            <a href="/products.html">Product</a>
+            <a href="/gallery.html">Gallery</a>
+            <a href="/contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <div class="footer-contact">
+            <p>Lagu Udyog, Gate No 3, IB Patel Road, Goregaon East, Gala No C-24</p>
+            <p>+91 9833960442</p>
+            <p>+91 9833960442</p>
+            <p>vinodp00750@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <script>document.write(new Date().getFullYear())</script> Vivek Moulds Enterprises. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919833960442" class="whatsapp-float" target="_blank">WhatsApp</a>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
