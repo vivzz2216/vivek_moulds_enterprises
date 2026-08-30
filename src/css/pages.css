@@ -724,3 +724,202 @@ textarea.form-control {
     display: none;
   }
 }
+
+/* =========================================
+   ULTIMATE HERO REDESIGN
+========================================= */
+.hero-ultimate {
+  position: relative;
+  background-color: var(--color-white);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-ultimate-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(211, 47, 47, 0.03) 0%, transparent 40%),
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  z-index: 0;
+}
+
+.hero-ultimate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Left Image Section */
+.hero-ult-left {
+  flex: 1;
+  position: relative;
+}
+
+.hero-ult-img-wrapper {
+  position: relative;
+  border-radius: 12px;
+}
+
+.hero-ult-img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Glass Tags */
+.glass-tag {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+.glass-tag-top {
+  top: 15%;
+  right: -30px;
+  animation-delay: 0s;
+}
+
+.glass-tag-bottom {
+  bottom: 15%;
+  left: -30px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Right Typography Section */
+.hero-ult-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-ult-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-ult-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #ff4b4b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-ult-desc {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 90%;
+}
+
+.hero-ult-cta {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-hero-ult {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 18px 36px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(211, 47, 47, 0.3);
+  transition: all 0.3s ease;
+}
+.btn-hero-ult:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(211, 47, 47, 0.4);
+}
+
+.btn-hero-ult-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 18px 36px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+.btn-hero-ult-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Entrance Animations */
+.slide-in-left {
+  animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 992px) {
+  .hero-ultimate-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .hero-ult-title { font-size: 3rem; }
+  .hero-ult-desc { margin: 0 auto 30px; }
+  .hero-ult-cta { justify-content: center; flex-direction: column; }
+  .glass-tag { display: none; }
+}
