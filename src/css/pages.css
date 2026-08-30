@@ -951,4 +951,11 @@ textarea.form-control {
   .page-header p { font-size: 1rem !important; }
   
   .cta-flex h2 { font-size: 1.8rem; }
+  
+  /* Inner Pages Safety */
+  .section { padding: 50px 0 !important; }
+  .page-header { padding: 60px 0 30px !important; }
+  .contact-form-card, .contact-info { padding: 20px; width: 100%; box-sizing: border-box; }
+  .gallery-grid, .services-grid { gap: 15px; }
+  .about-preview img { width: 100%; height: auto; border-radius: 8px; }
 }
